@@ -1,0 +1,67 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div>
+    <%= form.label :creator, style: "display: block" %>
+    <%= form.text_field :creator %>
+  </div>
+
+  <div>
+    <%= form.label :created_t, style: "display: block" %>
+    <%= form.number_field :created_t %>
+  </div>
+
+  <div>
+    <%= form.label :created_datetime, style: "display: block" %>
+    <%= form.datetime_field :created_datetime %>
+  </div>
+
+  <div>
+    <%= form.label :last_modified_t, style: "display: block" %>
+    <%= form.number_field :last_modified_t %>
+  </div>
+
+  <div>
+    <%= form.label :last_modified_datetime, style: "display: block" %>
+    <%= form.datetime_field :last_modified_datetime %>
+  </div>
+
+  <div>
+    <%= form.label :product_name, style: "display: block" %>
+    <%= form.text_field :product_name %>
+  </div>
+
+  <div>
+    <%= form.label :generic_name, style: "display: block" %>
+    <%= form.text_field :generic_name %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.text_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
